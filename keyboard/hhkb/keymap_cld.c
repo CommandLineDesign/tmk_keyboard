@@ -10,15 +10,15 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] __attribute__ ((section (".key
 const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 #endif
     /* Layer 0: Default Layer */
-    KEYMAP_JP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, JYEN,BSPC, \
-              TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC, \
-              LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,BSLS,ENT, \
+    KEYMAP_JP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0, MINS ,EQL, GRV, BSPC, \
+              TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,  LBRC, RBRC, \
+              FN3,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,BSLS,ENT, \
               LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,  UP,  FN0, \
-              FN4, FN3,LGUI,LALT,FN0,     FN1,      FN2,KANA,RALT,FN12, LEFT,DOWN,RGHT),
+              FN4, LCTL,LGUI,LALT,FN0,     FN1,      FN2,KANA,RALT,FN12, LEFT,DOWN,RGHT),
      /* Layer 1: OSX Layer */
     KEYMAP_JP(TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-              LGUI,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
+              FN3,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               FN7,TRNS,LCTL,TRNS,TRNS,     TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS),
      /* Layer 2: Game Layer */
@@ -26,7 +26,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-              TRNS,TRNS,TRNS,TRNS,TRNS,     SPC,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS),
+              LCTL,LCTL,TRNS,TRNS,TRNS,     SPC,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS),
     /* Layer 3: Switch Layer */
     KEYMAP_JP(TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
@@ -71,7 +71,7 @@ const action_t fn_actions[] PROGMEM = {
     [0] = ACTION_LAYER_MOMENTARY(4), // Arrow and HHKB Layer
     [1] = ACTION_LAYER_TAP_KEY(4, KC_SPC), // Arrow and HHKB Layer with space (spaceFn)   
     [2] = ACTION_LAYER_MOMENTARY(5), // Nav Layer
-    [3] = ACTION_LAYER_TAP_KEY(2, KC_ENT), // Nav Layer with Enter on tap
+    [3] = ACTION_LAYER_TAP_KEY(5, KC_ENT), // Nav Layer with Enter on tap
     [4] = ACTION_LAYER_MOMENTARY(6), // Windows Layer Fns
     [5] = ACTION_MODS_KEY(MOD_LCTL, KC_LEFT),
     [6] = ACTION_MODS_KEY(MOD_LCTL, KC_RIGHT),
